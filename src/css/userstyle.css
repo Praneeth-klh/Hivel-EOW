@@ -1,0 +1,23 @@
+.user-card h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color:black;
+    margin:3px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    bottom: -35px;
+}
+.user-card p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+    font-weight: normal;   
+}
+.user-card img {
+  clip-path: circle(50% at 50% 50%);
+  width: 100px;
+  height: 100px;
+  object-fit: cover; 
+  margin-bottom: 15px;
+}
