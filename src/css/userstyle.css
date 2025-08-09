@@ -16,8 +16,8 @@
 }
 .user-card img {
   clip-path: circle(50% at 50% 50%);
-  width: 100px;
-  height: 100px;
   object-fit: cover; 
   margin-bottom: 15px;
+  position: relative;
+    bottom: -20px;
 }

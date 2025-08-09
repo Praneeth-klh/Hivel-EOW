@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../css/userstyle.css';
 const card = (props) => {
   return (
     <div className="user-card">
