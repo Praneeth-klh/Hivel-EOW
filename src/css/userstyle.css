@@ -1,19 +1,27 @@
-/* Apply global styles outside React components */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;  
   height: 100vh;
   background-color: white;
-  margin: 0;
-  gap: 25px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  transition: all 0.3s ease;
+  flex-direction: column;  
 }
 
-/* The user card styles */
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;  
+  overflow-y: auto;  
+  width: 100%;  
+  padding: 10px;  
+}
+
+/* The individual user card styles */
 .user-card {
   display: flex;
   flex-direction: column;
@@ -29,20 +37,10 @@ body {
 }
 
 .user-card h1 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 30px;
   font-weight: bold;
   color: black;
-  text-align: center;
-  position: relative;
   padding: 10px;
-  bottom: -20px;
-}
-
-.user-card p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 10px;
-  font-weight: normal;
 }
 
 .user-card img {
@@ -51,12 +49,9 @@ body {
   width: 160px;
   height: 160px;
   margin-bottom: 15px;
-  position: relative;
-  bottom: -50px;
-  right: -2px;
 }
 
 .user-card:hover {
-  transform: translateY(-40px);
+  transform: translateY(-10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
