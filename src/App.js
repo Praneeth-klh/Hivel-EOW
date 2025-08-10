@@ -7,18 +7,22 @@ function App() {
   const [users, setUsers] = useState([]); 
   const [allUsers, setAllUsers] = useState([]); 
   const [selectedUser, setSelectedUser] = useState(null);  
-   useEffect(() => {
+
+
+  useEffect(() => {
     fetch("https://dummyjson.com/users")
       .then(res => res.json())
       .then(data => {
-        setAllUsers(data.users);
+        setAllUsers(data.users); 
         setUsers(data.users); 
       })
       .catch(err => console.error("Error fetching users:", err));
   }, []);
-const searchUsers = (query) => {
+
+
+  const searchUsers = (query) => {
     if (!query.trim()) {
-      setUsers(allUsers); 
+      setUsers(allUsers);  
       return;
     }
 
@@ -35,13 +39,14 @@ const searchUsers = (query) => {
       );
     });
 
-    setUsers(filtered);  // Update users state with filtered results
+    setUsers(filtered);  
   };
+
   return (
     <div>
-      <Search onChange={searchUsers} />
-      <USerLists users={users} setSelectedUser={setSelectedUser} />
-      <FullView selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
+      <Search onChange={searchUsers} /> 
+      <USerLists users={users} setSelectedUser={setSelectedUser} />  
+      <FullView selectedUser={selectedUser} setSelectedUser={setSelectedUser} />  
     </div>
   );
 }

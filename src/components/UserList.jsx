@@ -5,10 +5,9 @@ import '../css/userstyle.css';
 
 const USerLists = ({ users, setSelectedUser }) => {
   if (users.length === 0) {
-    return <p>No users found.</p>;  // If no users match the search
+    return <p>No users found.</p>;  
   }
-
-  return (
+   return (
     <div className="card-container">
       {users.map(user => (
         <Card
@@ -17,7 +16,8 @@ const USerLists = ({ users, setSelectedUser }) => {
           lastName={user.lastName}
           email={user.email}
           phone={user.phone}
-          image={user.image}
+          image={user.image }
+          gender={user.gender}
           onClick={() => setSelectedUser(user)}  
         />
       ))}

@@ -1,28 +1,21 @@
 import React from 'react';
-import "../css/Modal.css";  // Assuming this handles modal and content styles
+import "../css/Modal.css";  
 
-const FullView = ({ user, closeModal }) => {
-  if (!user) {
-    return null;  // If no user, don't render the modal
-  }
+const FullView = ({ selectedUser, setSelectedUser }) => {
+  if (!selectedUser) return null; 
 
-  const { firstName, lastName, email, phone, address } = user;
+  const { firstName, lastName, email, phone, image, address,gender } = selectedUser;
 
   return (
-    <div className="modal" onClick={closeModal}>  {/* Close modal on overlay click */}
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>  {/* Prevent modal from closing when clicking inside */}
-        <span
-          className="close-btn"
-          onClick={closeModal}  // Close modal on close button click
-          tabIndex={0}  // Make the close button focusable
-          onKeyDown={(e) => e.key === 'Enter' && closeModal()}  // Allow closing with Enter key
-        >
-          &times;
-        </span>
-        <h1>{firstName} {lastName}</h1>
-        <p><strong>Email:</strong> {email || 'Not available'}</p>
-        <p><strong>Phone:</strong> {phone || 'Not available'}</p>
-        <p><strong>Address:</strong> {address ? `${address.street}, ${address.city}` : 'Not available'}</p>
+    <div className="modal">
+      <div className="modal-content" >
+        <button className="close-btn" onClick={() => setSelectedUser(null)}>Close</button>
+        <img src={image} alt={`${firstName} ${lastName}`} />
+        <h2>{firstName} {lastName}</h2>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Phone:</strong> {phone}</p>
+        <p><strong>Address:</strong> { `${address.address}, ${address.city}` }</p>
+        <p><strong>Gender:</strong> {gender}</p>
       </div>
     </div>
   );
