@@ -1,6 +1,7 @@
 import './App.css';
 import Card from './components/UserCard';
 import Search from './components/Search';
+import FullView from './components/FullView';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Search />
       <Card name="Praneeth" />
+      <FullView/>
     </div>
   );
 }
