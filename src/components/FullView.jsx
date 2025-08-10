@@ -1,21 +1,24 @@
-import React from 'react'
-import "../css/Modal.css";
-const FullView = ({user ,closeModal}) => {
-  if (!user) {
-    return null; // or <p>Loading...</p>
-  }
+import React from 'react';
+import "../css/Modal.css";  
+
+const FullView = ({ selectedUser, setSelectedUser }) => {
+  if (!selectedUser) return null; 
+
+  const { firstName, lastName, email, phone, image, address,gender } = selectedUser;
 
   return (
     <div className="modal">
-      <div className="modal-content">
-        <span className="close-btn" onClick={closeModal}>&times;</span>
-        <h1>{user.firstName} {user.lastName}</h1>
-        <p>Email: {user.email}</p>
-        <p>Phone: {user.phone}</p>
-        <p>Address: {user.address?.street}, {user.address?.city}</p>
+      <div className="modal-content" >
+        <button className="close-btn" onClick={() => setSelectedUser(null)}>Close</button>
+        <img src={image} alt={`${firstName} ${lastName}`} />
+        <h2>{firstName} {lastName}</h2>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Phone:</strong> {phone}</p>
+        <p><strong>Address:</strong> { `${address.address}, ${address.city}` }</p>
+        <p><strong>Gender:</strong> {gender}</p>
       </div>
     </div>
   );
-}
+};
 
 export default FullView

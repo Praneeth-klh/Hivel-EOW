@@ -3,25 +3,25 @@ import Card from './UserCard';
 import '../css/userstyle.css';
 
 
-const USerLists = ({users}) => {
-   if (!users || users.length === 0) {
-    return <p>No users found</p>;
+const USerLists = ({ users, setSelectedUser }) => {
+  if (users.length === 0) {
+    return <p>No users found.</p>;  
   }
-
-  return (
+   return (
     <div className="card-container">
-      {users.map((u) => (
+      {users.map(user => (
         <Card
-          key={u.id}
-          firstname={u.firstName}
-          lastName={u.lastName} // ✅ matches Card.jsx
-          gender={u.gender}
-          image={u.image}       // ✅ matches Card.jsx
-          email={u.email}       // ✅ so email works
+          key={user.id}
+          firstname={user.firstName}
+          lastName={user.lastName}
+          email={user.email}
+          phone={user.phone}
+          image={user.image }
+          gender={user.gender}
+          onClick={() => setSelectedUser(user)}  
         />
       ))}
     </div>
   );
-}
-
+};
 export default USerLists;
