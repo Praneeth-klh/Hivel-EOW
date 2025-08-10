@@ -1,6 +1,10 @@
 import React from 'react'
 import "../css/Modal.css";
 const FullView = ({user ,closeModal}) => {
+  if (!user) {
+    return null; // or <p>Loading...</p>
+  }
+
   return (
     <div className="modal">
       <div className="modal-content">
