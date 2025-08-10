@@ -1,10 +1,14 @@
-
 import './App.css';
-import UserCard from './components/UserCard';
+import Card from './components/UserCard';
+import Search from './components/Search';
+
 
 function App() {
   return (
-    <UserCard name="Praneeth" />
+    <div>
+      <Search />
+      <Card name="Praneeth" />
+    </div>
   );
 }
 
