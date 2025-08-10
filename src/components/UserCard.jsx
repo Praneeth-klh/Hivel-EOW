@@ -1,13 +1,13 @@
 import React from 'react';
 import '../css/userstyle.css';
 
-const Card = (props) => {
+const Card = ({ firstname, lastName, email, phone, image, onClick }) => {
   return (
-    <div className="user-card">
-      <img src={props.image} alt={`${props.firstname}'s avatar`} />
-      <h1>{props.firstname} {props.lastName}</h1>
-      <p>{props.gender}</p>
-      <p>{props.email}</p>
+    <div className="user-card" onClick={onClick} role="button" tabIndex={0}>
+      <img src={image} alt={`${firstname} ${lastName}`} />
+      <h3>{firstname} {lastName}</h3>
+      <p>{email}</p>
+      <p>{phone}</p>
     </div>
   );
 };
