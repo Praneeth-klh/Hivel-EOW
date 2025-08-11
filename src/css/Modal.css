@@ -1,4 +1,4 @@
-/* Modal overlay */
+
 .modal {
   position: fixed;
   top: 0;
@@ -12,7 +12,6 @@
   z-index: 1000;
 }
 
-/* Modal content */
 .modal-content {
   background: white;
   padding: 20px;
@@ -21,8 +20,6 @@
   text-align: center;
   position: relative;
 }
-
-/* Close button */
 .close-btn {
   background: red;
   color: white;
@@ -36,6 +33,9 @@
   font-size: 24px;
 }
 
+.close-btn:focus {
+  border: 2px solid #000;  
+}
 
 img {
   width: 150px;
